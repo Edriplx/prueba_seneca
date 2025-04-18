@@ -1,0 +1,33 @@
+<div class="card">
+  <h2>Iniciar sesión</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label>Correo electrónico:</label>
+    <input type="email" formControlName="email" />
+    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+      <small class="error" *ngIf="loginForm.get('email')?.errors?.['required']">Este campo es obligatorio</small>
+      <small class="error" *ngIf="loginForm.get('email')?.errors?.['email']">Correo inválido</small>
+    </div>
+
+    <label>Contraseña:</label>
+    <input type="password" formControlName="password" />
+    <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+      <small class="error" *ngIf="loginForm.get('password')?.errors?.['required']">Este campo es obligatorio</small>
+      <small class="error" *ngIf="loginForm.get('password')?.errors?.['minlength']">Debe tener al menos 6 caracteres</small>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid || isLoading">Iniciar sesión</button>
+  </form>
+
+  <div class="link-buttons">
+    <a (click)="goToForgotPassword()">¿Olvidaste tu contraseña?</a>
+    <a (click)="goToRegister()">¿No tienes cuenta? Regístrate</a>
+  </div>
+
+  <p class="message success" *ngIf="message.includes('@ok')">
+    ✅ {{ message.replace('@ok', '').trim() }}
+  </p>
+  <p class="message error" *ngIf="message.includes('@error')">
+    ❌ {{ message.replace('@error', '').trim() }}
+  </p>
+</div>

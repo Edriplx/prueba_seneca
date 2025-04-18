@@ -1,0 +1,9 @@
+<div class="verify-container">
+  <h2 class="success" *ngIf="message.includes('@ok')">
+    ✅ {{ message.replace('@ok', '').trim() }}
+  </h2>
+  <h2 class="error" *ngIf="message.includes('@error')">
+    ❌ {{ message.replace('@error', '').trim() }}
+  </h2>
+  </div>
+  

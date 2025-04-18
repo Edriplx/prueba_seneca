@@ -1,0 +1,70 @@
+{
+  "hash": "60651113",
+  "configHash": "0c86fdc4",
+  "lockfileHash": "498da3f5",
+  "browserHash": "50dfdd46",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "c64694cb",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "866c56f3",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "cda2f805",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "530adb80",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "6c74e836",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
+      "file": "@angular_platform-browser_animations.js",
+      "fileHash": "e8dc502d",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "402aaded",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-JKOVABTM": {
+      "file": "chunk-JKOVABTM.js"
+    },
+    "chunk-GDPJ4OBD": {
+      "file": "chunk-GDPJ4OBD.js"
+    },
+    "chunk-ZARDRSRC": {
+      "file": "chunk-ZARDRSRC.js"
+    },
+    "chunk-RMLN52P2": {
+      "file": "chunk-RMLN52P2.js"
+    },
+    "chunk-ZTNQHJPU": {
+      "file": "chunk-ZTNQHJPU.js"
+    },
+    "chunk-MHQIP2VU": {
+      "file": "chunk-MHQIP2VU.js"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<div class="card">
+  <h2>Bienvenido</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Nombres:</label>
+    <input type="text" formControlName="firstName" />
+
+    <label>Apellidos:</label>
+    <input type="text" formControlName="lastName" />
+
+    <label>Dirección:</label>
+    <input type="text" formControlName="address" />
+
+    <label>Fecha de nacimiento:</label>
+    <input type="date" formControlName="birthdate" />
+
+    <button type="submit" [disabled]="form.invalid">Actualizar</button>
+  </form>
+
+  <div class="last-login" *ngIf="lastLogin">
+    Último inicio de sesión: {{ lastLogin | date: 'fullDate' }} a las {{ lastLogin | date: 'shortTime' }}
+  </div>
+
+  <p class="message success" *ngIf="message.includes('@ok')">
+    ✅ {{ message.replace('@ok', '').trim() }}
+  </p>
+  <p class="message error" *ngIf="message.includes('@error')">
+    ❌ {{ message.replace('@error', '').trim() }}
+  </p>
+
+  <hr />
+
+  <button (click)="logout()" class="logout-btn">Cerrar sesión</button>
+</div>

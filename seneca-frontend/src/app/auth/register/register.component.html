@@ -1,0 +1,56 @@
+<div class="card">
+  <h2>Registro de Usuario</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label>Nombres:</label>
+    <input type="text" formControlName="firstName" />
+    <div *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid">
+      <small class="error">Este campo es obligatorio</small>
+    </div>
+
+    <label>Apellidos:</label>
+    <input type="text" formControlName="lastName" />
+    <div *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid">
+      <small class="error">Este campo es obligatorio</small>
+    </div>
+
+    <label>Dirección:</label>
+    <input type="text" formControlName="address" />
+    <div *ngIf="registerForm.get('address')?.touched && registerForm.get('address')?.invalid">
+      <small class="error">Este campo es obligatorio</small>
+    </div>
+
+    <label>Fecha de nacimiento:</label>
+    <input type="date" formControlName="birthdate" />
+    <div *ngIf="registerForm.get('birthdate')?.touched && registerForm.get('birthdate')?.invalid">
+      <small class="error">Este campo es obligatorio</small>
+    </div>
+
+    <label>Correo electrónico:</label>
+    <input type="email" formControlName="email" />
+    <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+      <small class="error" *ngIf="registerForm.get('email')?.errors?.['required']">Este campo es obligatorio</small>
+      <small class="error" *ngIf="registerForm.get('email')?.errors?.['email']">Correo inválido</small>
+    </div>
+
+    <label>Contraseña:</label>
+    <input type="password" formControlName="password" />
+    <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+      <small class="error" *ngIf="registerForm.get('password')?.errors?.['required']">Este campo es obligatorio</small>
+      <small class="error" *ngIf="registerForm.get('password')?.errors?.['minlength']">Debe tener al menos 6 caracteres</small>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid || isLoading">Registrar</button>
+  </form>
+
+  <div class="link-buttons">
+    <a (click)="goToLogin()">¿Ya tienes cuenta? Inicia sesión</a>
+  </div>
+
+  <p class="message success" *ngIf="message.startsWith('@ok')">
+    ✅ {{ message.replace('@ok', '').trim() }}
+  </p>
+  <p class="message error" *ngIf="message.startsWith('@error')">
+    ❌ {{ message.replace('@error', '').trim() }}
+  </p>
+</div>
